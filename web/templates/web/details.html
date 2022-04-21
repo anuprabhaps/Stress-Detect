@@ -1,0 +1,44 @@
+{% extends 'web/base.html' %}
+{% block body %}
+<form method="POST" action="{% url 'predict' %}">
+    {% csrf_token %}
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="sr">Snooring rate</label>
+            <input type="text" name="sr" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+            <label for="rr">Respiration rate</label>
+            <input type="text" name="rr" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="t">Temperature</label>
+            <input type="text" name="t" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="lm">Limb movement</label>
+            <input type="text" name="lm" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="bo">Blood oxygen level</label>
+            <input type="text" name="bo" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="rem">Eye movement</label>
+            <input type="text" name="rem" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="sr.1">Number of hours slept</label>
+            <input type="text" name="sr.1" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="hr">Heart rate</label>
+            <input type="text" name="hr" class="form-control" required="required"/>
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control"> Submit</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
